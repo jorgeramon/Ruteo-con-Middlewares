@@ -12,6 +12,11 @@ app.use('/users', UserRoutes);
 app.use('/products', ProductRoutes);
 app.use('/auth', AuthRoutes);
 
+app.get('/kill', function (request, response) {
+  response.end();
+  process.exit(0);
+});
+
 app.listen(8080, function () {
   console.log('> Servidor escuchando el puerto 8080');
 });
